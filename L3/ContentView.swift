@@ -11,10 +11,10 @@ struct ContentView: View {
         Button {
             withAnimation(.linear(duration: 0.3)){
                 alpha = 1
-                width = 10
-                height = 10
-                widthForFirst = 1
-                heightForFirst = 1
+                width = 100
+                height = 100
+                widthForFirst = 10
+                heightForFirst = 10
             } completion: {
                 withAnimation(.linear(duration: 0.1)){
                     widthForFirst = 0
@@ -36,16 +36,18 @@ struct ContentView: View {
                 Image(systemName: "play.fill")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 10, height: 10)
+                    .frame(width: 100, height: 100)
                     .offset(x: width + widthForFirst)
 
                 Image(systemName: "play.fill")
                     .resizable()
                     .scaledToFill()
                     .opacity(1 - alpha)
-                    .frame(width: 10.01 - width, height: 10.01 - height)
-                    .offset(x: 10 + widthForFirst + width / 2)
+                    .frame(width: 100.01 - width, height: 100.01 - height)
+                    .offset(x: 100 + widthForFirst + width / 2)
             })
+            .offset(x: -40)
+            .padding(100)
         }
     }
 }
